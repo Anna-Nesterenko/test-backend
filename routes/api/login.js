@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const createError = require("http-errors");
 
 const { validation } = require("../../middleware");
 const { schemas } = require("../../models/user");

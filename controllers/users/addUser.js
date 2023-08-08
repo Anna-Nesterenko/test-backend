@@ -30,7 +30,7 @@ const addUser = async (req, res) => {
     first_name,
     last_name,
     role: role || "user",
-    department_id: department_id || 102,
+    department_id: department_id || 103,
     position,
   };
 

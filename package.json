@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./server.js",
-    "start:dev": "cross-env NODE_ENV=development nodemon ./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "npm run migrate:latest && npm run seed:run && cross-env NODE_ENV=development nodemon ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate:latest": "knex migrate:latest",
+    "seed:run": "knex seed:run"
   },
-  "author": "",
+  "author": "Anny",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

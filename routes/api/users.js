@@ -15,16 +15,18 @@ router.post(
   "/",
   authenticate,
   requireAdmin,
-  validation(schemas.userSchema),
+  validation(schemas.createUserSchema),
   ctrlWrapper(ctrl.addUser)
 );
 
-router.patch(
-  "/",
+router.put(
+  "/:id",
   authenticate,
   requireAdmin,
-  validation(schemas.userSchema),
+  validation(schemas.updateUserSchema),
   ctrlWrapper(ctrl.updateUser)
 );
+
+router.delete("/:id", authenticate, requireAdmin, ctrlWrapper(ctrl.deleteUser));
 
 module.exports = router;
