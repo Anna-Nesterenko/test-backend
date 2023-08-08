@@ -23,8 +23,8 @@ const login = async (req, res) => {
     throw createError(401, "Login or password are wrong");
   }
 
-  // Create a payload containing user's id for the JWT
-  const payload = { id: user.id };
+  // Create a payload containing user's id and user's role for the JWT
+  const payload = { id: user.id, role: user.role };
 
   // Generate a JSON Web Token using the payload and the secret key
   const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "1h" });

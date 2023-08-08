@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const createError = require("http-errors");
 
 const { validation } = require("../../middleware");
-const { schemas } = require("../../models/users");
+const { schemas } = require("../../models/user");
 const { ctrlWrapper } = require("../../helpers");
 const { auth: ctrl } = require("../../controllers");
 

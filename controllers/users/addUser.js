@@ -3,7 +3,7 @@ const createError = require("http-errors");
 
 const { db } = require("../../db");
 
-const signup = async (req, res) => {
+const addUser = async (req, res) => {
   const {
     login,
     password,
@@ -29,8 +29,8 @@ const signup = async (req, res) => {
     password: hashedPassword,
     first_name,
     last_name,
-    role,
-    department_id,
+    role: role || "user",
+    department_id: department_id || 102,
     position,
   };
 
@@ -40,4 +40,4 @@ const signup = async (req, res) => {
   res.status(201).json({ id: insertedIds[0] });
 };
 
-module.exports = signup;
+module.exports = addUser;

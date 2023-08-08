@@ -1,13 +1,13 @@
 const Joi = require("joi");
 
-// Define the signup schema for validation
-const signupSchema = Joi.object({
+// Define the schema for validating user data during user creation
+const userSchema = Joi.object({
   login: Joi.string().min(3).required(),
   password: Joi.string().min(6).required(),
   first_name: Joi.string().min(2).required(),
   last_name: Joi.string().min(2).required(),
-  role: Joi.string().valid("admin", "user").required(),
-  department_id: Joi.number().integer().valid(101, 102, 103).required(),
+  role: Joi.string().valid("admin", "user"),
+  department_id: Joi.number().integer().valid(101, 102, 103),
   position: Joi.string().min(2),
 });
 
@@ -18,7 +18,7 @@ const loginSchema = Joi.object({
 });
 
 const schemas = {
-  signupSchema,
+  userSchema,
   loginSchema,
 };
 

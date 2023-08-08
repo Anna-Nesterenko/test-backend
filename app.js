@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const loginRouter = require("./routes/api/login");
-const signupRouter = require("./routes/api/signup");
+const usersRouter = require("./routes/api/users");
 const logoutRouter = require("./routes/api/logout");
 
 // Create an Express app
@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Use the route handlers
 app.use("/api/login", loginRouter);
-app.use("/api/signup", signupRouter);
+app.use("/api/users", usersRouter);
 app.use("/api/logout", logoutRouter);
 
 // Handle 404 errors by sending a JSON response
