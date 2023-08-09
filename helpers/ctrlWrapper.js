@@ -1,3 +1,7 @@
+const test = require("../server");
+
+console.log(test);
+
 // This function wraps a controller function with error handling and logging.
 const ctrlWrapper = (ctrl) => {
   const func = async (req, res, next) => {

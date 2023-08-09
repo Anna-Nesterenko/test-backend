@@ -27,7 +27,7 @@ const login = async (req, res) => {
   const payload = { id: user.id, role: user.role };
 
   // Generate a JSON Web Token using the payload and the secret key
-  const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "1h" });
+  const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "3h" });
 
   await db("users").where({ id: user.id }).update({ token });
 

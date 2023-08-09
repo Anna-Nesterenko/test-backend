@@ -35,9 +35,9 @@ const addUser = async (req, res) => {
   };
 
   // Insert the new user into the database and retrieve the inserted ID
-  const insertedIds = await db("users").insert(newUser);
+  const insertedId = await db("users").insert(newUser);
 
-  res.status(201).json({ id: insertedIds[0] });
+  res.status(201).json({ id: insertedId[0] });
 };
 
 module.exports = addUser;

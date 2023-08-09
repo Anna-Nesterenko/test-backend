@@ -20,7 +20,7 @@ const authenticate = async (req, _, next) => {
     const { id } = jwt.verify(token, SECRET_KEY);
     const user = await db("users").where({ id }).first();
 
-    if (!user || user.token !== token) {
+    if (!user || !user.token || user.token !== token) {
       throw createError(401, `Not authorized`);
     }
 

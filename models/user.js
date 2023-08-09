@@ -11,6 +11,7 @@ const createUserSchema = Joi.object({
   position: Joi.string().min(2),
 });
 
+// Define the schema for validating user data during user updating
 const updateUserSchema = Joi.object({
   first_name: Joi.string().min(2),
   last_name: Joi.string().min(2),
@@ -26,10 +27,8 @@ const loginSchema = Joi.object({
   password: Joi.string().min(6).required(),
 });
 
-const schemas = {
+module.exports = {
   createUserSchema,
   updateUserSchema,
   loginSchema,
 };
-
-module.exports = { schemas };
