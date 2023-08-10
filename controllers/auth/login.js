@@ -24,7 +24,7 @@ const { createTokens } = require("../../helpers");
 
 const login = async (req, res) => {
   const { login, password } = req.body;
-  console.log(login);
+
   // Fetch user information from the database based on the provided login
   const user = await db("users").where({ login }).first();
 
