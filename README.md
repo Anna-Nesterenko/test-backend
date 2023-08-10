@@ -5,7 +5,7 @@ for real-time communication and MariaDB with Knex.js for database management. <b
 The server provides endpoints for user and topic management, allowing administrators to create, <br/>
 update, and delete users and topics. Users can view topics and receive real-time notifications about new topic creations.<br/>
 <br/>
-**Features** 
+**Features** <br/>
 <br/>
 User Authentication: <br/>
 Administrators can create, update, and delete user accounts. <br/>
@@ -15,7 +15,8 @@ User Notifications: <br/>
 Users receive real-time notifications when new topics are created. <br/>
 Database Integration: <br/>
 Utilizes MariaDB as the database and Knex.js as the query builder. <br/>
-Real-Time Communication: Implements Socket.IO for real-time communication between clients and the server.<br/>
+Real-Time Communication: <br/>
+Implements Socket.IO for real-time communication between clients and the server.<br/>
 <br/>
 **Getting Started**<br/>
 <br/>
