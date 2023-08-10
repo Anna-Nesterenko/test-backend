@@ -26,8 +26,8 @@ Install dependencies: npm install<br/>
 <br/>
 **Usage Configure** <br/>
 <br/>
-environment variables by creating a .env file based on the provided .env.example. <br/>
-npm run start:dev: Start the server in development mode with migrations and seeding. <br/>
+Environment variables by creating a .env file based on the provided .env.example. <br/>
+-npm run start:dev: Start the server in development mode with migrations and seeding. <br/>
 Access the application via http://localhost:3000.<br/>
 <br/>
 **API Routes**<br/>
