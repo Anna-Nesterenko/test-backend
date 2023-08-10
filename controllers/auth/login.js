@@ -24,15 +24,20 @@ const { createTokens } = require("../../helpers");
 
 const login = async (req, res) => {
   const { login, password } = req.body;
-
+  console.log(login);
   // Fetch user information from the database based on the provided login
   const user = await db("users").where({ login }).first();
+
+  // Check if user exists
+  if (!user) {
+    throw createError(401, "Login or password are wrong");
+  }
 
   // Compare the provided password with the hashed password stored in the database
   const isPasswordValid = await bcrypt.compare(password, user.password);
 
-  // Check if user exists and if the provided password is valid
-  if (!user || !isPasswordValid) {
+  // Check if the provided password is valid
+  if (!isPasswordValid) {
     throw createError(401, "Login or password are wrong");
   }
 

@@ -21,6 +21,7 @@ const { topics: ctrl } = require("../../controllers");
  * @route GET /api/topics?fromDate=2023-01-01&toDate=2023-08-31
  * @route GET /api/topics?sortBy=created_at&sortOrder=desc
  * @route GET /api/topics?sortBy=created_at&sortOrder=asc
+ *
  * @group Topics
  * @param {string} req.query.sortBy - The field to sort by ("created_at").
  * @param {string} req.query.sortOrder - The sorting order ("asc" or "desc").

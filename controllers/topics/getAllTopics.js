@@ -24,18 +24,14 @@ const getAllTopics = async (req, res) => {
   let query = db("topics");
 
   // Apply sorting and filtering using the query builder helper
-  query = applySortAndFilter(
-    query,
-    "created_at",
-    "desc",
-    sortBy,
-    sortOrder,
-    fromDate,
-    toDate
-  );
+  query = applySortAndFilter(query, sortBy, sortOrder, fromDate, toDate);
 
   // Execute the query
   const topics = await query;
+
+  if (!sortBy || !sortOrder) {
+    topics.sort((a, b) => b.created_at - a.created_at);
+  }
 
   res.status(200).json(topics);
 };
