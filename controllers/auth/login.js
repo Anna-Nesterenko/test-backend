@@ -1,13 +1,26 @@
 const bcrypt = require("bcryptjs");
 const createError = require("http-errors");
-const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
 
 const { db } = require("../../db");
+const { createTokens } = require("../../helpers");
 
-dotenv.config();
-
-const { SECRET_KEY } = process.env;
+/**
+ * Log in a user with the provided credentials.
+ * Fetches user information from the database based on the provided login.
+ * Compares the provided password with the hashed password stored in the database.
+ * Generates access and refresh tokens for the authenticated user.
+ * Updates the user's access and refresh tokens in the database.
+ * Responds with user information and tokens upon successful login.
+ *
+ * @function login
+ * @async
+ * @param {object} req - The Express request object.
+ * @param {object} res - The Express response object.
+ * @param {string} req.body.login - The user's login username.
+ * @param {string} req.body.password - The user's password.
+ * @throws {Error} - If the provided login or password are incorrect.
+ * @returns {object} - Returns user information and generated tokens.
+ */
 
 const login = async (req, res) => {
   const { login, password } = req.body;
@@ -23,15 +36,17 @@ const login = async (req, res) => {
     throw createError(401, "Login or password are wrong");
   }
 
-  // Create a payload containing user's id and user's role for the JWT
-  const payload = { id: user.id, role: user.role };
+  const { access_token, refresh_token } = await createTokens(user.id);
 
-  // Generate a JSON Web Token using the payload and the secret key
-  const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "3h" });
+  await db("users")
+    .where({ id: user.id })
+    .update({ access_token, refresh_token });
 
-  await db("users").where({ id: user.id }).update({ token });
-
-  res.status(200).json({ id: user.id, token: token });
+  res.status(200).json({
+    id: user.id,
+    access_token,
+    refresh_token,
+  });
 };
 
 module.exports = login;
