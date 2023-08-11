@@ -1,0 +1,2377 @@
+{
+	"info": {
+		"_postman_id": "01edafb9-25af-4f2f-a2e9-f261ad987773",
+		"name": "test_backend",
+		"description": "test_backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23254080"
+	},
+	"item": [
+		{
+			"name": "login first`s admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjU5Mjc4LCJleHAiOjE2OTE2NjAxNzh9.P4UyPOnemZTB0vRLp4poeqTW2EKA-9lcdp0838T87UU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"login\":\"admin\",\r\n\"password\":\"12345678\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"login\":\"admin\",\r\n\"password\":\"12345678\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "319"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13f-riprN47h/I/z1dhfwnEZldUdspg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:15:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkxMzE5LCJleHAiOjE2OTE2OTIyMTl9.aPcHY1eQFhQxhQqrlGFr7zogo_CSdZqMDn6kzj1lNfY\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkxMzE5LCJleHAiOjE2OTE3Nzc3MTl9.P592amsYap8HTjUkWNGAvfONb_ivpeSMNizIAiBtXRI\"\n}"
+				}
+			]
+		},
+		{
+			"name": "all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjcxMjU2LCJleHAiOjE2OTE2NzIxNTZ9.u_vGm31AAEywsGpbY-iNz9_NLbjevcFrBgP6svjEP4E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "401 not authorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-hptDGgvEsj4G9BowIxRncOGOQj0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:44:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized\"\n}"
+				},
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2195"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"893-66Ck+MsoSW+kog361I9AzusjFXc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:51:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"login\": \"admin\",\n        \"password\": \"$2a$10$S3/YvNsXSOR3vcFevox7nO.6SKqRZfc/Vo14ejlXPlv/XZ9P4zRn.\",\n        \"first_name\": \"Admin\",\n        \"last_name\": \"User\",\n        \"role\": \"admin\",\n        \"department_id\": 103,\n        \"position\": null,\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkzMzc3LCJleHAiOjE2OTE2OTQyNzd9.huVPgyP3nuO1x7vH1h5R_r4Pwp--R1uu_E2RFxlvU04\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkzMzc3LCJleHAiOjE2OTE3Nzk3Nzd9.QF2bTy34xtj6SSPKuC_Ih-gdLSbC1jhCk8_385iJY8k\",\n        \"created_at\": \"2023-08-10T09:14:03.000Z\"\n    },\n    {\n        \"id\": 5,\n        \"login\": \"ZarinaY\",\n        \"password\": \"$2a$10$bYc7TbzgT6eykS1D/mBEi.pvROTJAFDbhhjpERvYChoVnItN0IAwm\",\n        \"first_name\": \"Zarina\",\n        \"last_name\": \"Yellow\",\n        \"role\": \"user\",\n        \"department_id\": 101,\n        \"position\": \"Accounter\",\n        \"access_token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2023-08-10T14:05:43.000Z\"\n    },\n    {\n        \"id\": 6,\n        \"login\": \"VeraL\",\n        \"password\": \"$2a$10$gKnF.z1vMpryl1nk/SkLzOlYRHoyvmpuw7YJxWLLvcHLWa5ctc/Ce\",\n        \"first_name\": \"Vera\",\n        \"last_name\": \"Lime\",\n        \"role\": \"admin\",\n        \"department_id\": 102,\n        \"position\": \"Manager\",\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjkxNjkzMDYxLCJleHAiOjE2OTE2OTM5NjF9.82Q9Fa5S8QgqD8VupwbYmqtlvVhUZFTDT5P7XwX7Cwo\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjkxNjkzMDYxLCJleHAiOjE2OTE3Nzk0NjF9.LRykLudjbO3S68i9HzqsiKp4a1iyYZJOHZfQmiWDH-A\",\n        \"created_at\": \"2023-08-10T18:19:33.000Z\"\n    },\n    {\n        \"id\": 7,\n        \"login\": \"LeraW\",\n        \"password\": \"$2a$10$/x69Xe1E3C4NbIBg012pZuGNhWFiZb2O7r7siWHtcyNL4pjvjx/pO\",\n        \"first_name\": \"Lera\",\n        \"last_name\": \"White\",\n        \"role\": \"user\",\n        \"department_id\": 102,\n        \"position\": \"Manager\",\n        \"access_token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2023-08-10T18:50:07.000Z\"\n    },\n    {\n        \"id\": 8,\n        \"login\": \"MaxG\",\n        \"password\": \"$2a$10$atoL15ISq3Nx3dPB5FJS9elpXfmDo4qco98gEBALj3oWF5D/fKXta\",\n        \"first_name\": \"Max\",\n        \"last_name\": \"Green\",\n        \"role\": \"user\",\n        \"department_id\": 102,\n        \"position\": \"Manager\",\n        \"access_token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2023-08-10T18:50:25.000Z\"\n    },\n    {\n        \"id\": 9,\n        \"login\": \"ArtemV\",\n        \"password\": \"$2a$10$u.uiqAGMtTUpayCy3yRFBe3rEGOgdUhnolPpyntVwBVGt2ob6.fD2\",\n        \"first_name\": \"Artem\",\n        \"last_name\": \"Violet\",\n        \"role\": \"user\",\n        \"department_id\": 102,\n        \"position\": \"Manager\",\n        \"access_token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2023-08-10T18:50:48.000Z\"\n    }\n]"
+				},
+				{
+					"name": "200 ok sort&filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users?sortBy=created_at&sortOrder=desc&fromDate=2022-01-01&toDate=2022-08-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "created_at"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc"
+								},
+								{
+									"key": "fromDate",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2022-08-31"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "828"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33c-Tpg9iCIkmJ4mm49JDenEfkjta9o\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:53:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 6,\n        \"login\": \"VeraL\",\n        \"password\": \"$2a$10$gKnF.z1vMpryl1nk/SkLzOlYRHoyvmpuw7YJxWLLvcHLWa5ctc/Ce\",\n        \"first_name\": \"Vera\",\n        \"last_name\": \"Lime\",\n        \"role\": \"admin\",\n        \"department_id\": 102,\n        \"position\": \"Manager\",\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjkxNjkzMDYxLCJleHAiOjE2OTE2OTM5NjF9.82Q9Fa5S8QgqD8VupwbYmqtlvVhUZFTDT5P7XwX7Cwo\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjkxNjkzMDYxLCJleHAiOjE2OTE3Nzk0NjF9.LRykLudjbO3S68i9HzqsiKp4a1iyYZJOHZfQmiWDH-A\",\n        \"created_at\": \"2022-08-10T18:19:33.000Z\"\n    },\n    {\n        \"id\": 5,\n        \"login\": \"ZarinaY\",\n        \"password\": \"$2a$10$bYc7TbzgT6eykS1D/mBEi.pvROTJAFDbhhjpERvYChoVnItN0IAwm\",\n        \"first_name\": \"Zarina\",\n        \"last_name\": \"Yellow\",\n        \"role\": \"user\",\n        \"department_id\": 101,\n        \"position\": \"Accounter\",\n        \"access_token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2022-08-10T14:05:43.000Z\"\n    }\n]"
+				},
+				{
+					"name": "200 ok filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users?fromDate=2023-01-01&toDate=2023-08-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2023-08-31"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "549"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"225-1n07CkhrebUGZYciOzaFkJwFz3o\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:54:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 7,\n        \"login\": \"LeraW\",\n        \"password\": \"$2a$10$/x69Xe1E3C4NbIBg012pZuGNhWFiZb2O7r7siWHtcyNL4pjvjx/pO\",\n        \"first_name\": \"Lera\",\n        \"last_name\": \"White\",\n        \"role\": \"user\",\n        \"department_id\": 102,\n        \"position\": \"Manager\",\n        \"access_token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2023-08-10T18:50:07.000Z\"\n    },\n    {\n        \"id\": 8,\n        \"login\": \"MaxG\",\n        \"password\": \"$2a$10$atoL15ISq3Nx3dPB5FJS9elpXfmDo4qco98gEBALj3oWF5D/fKXta\",\n        \"first_name\": \"Max\",\n        \"last_name\": \"Green\",\n        \"role\": \"user\",\n        \"department_id\": 102,\n        \"position\": \"Manager\",\n        \"access_token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2023-08-10T18:50:25.000Z\"\n    }\n]"
+				},
+				{
+					"name": "403 not admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users?fromDate=2023-01-01&toDate=2023-08-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2023-08-31"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-fS/zQyWnyflNOAGFzMk3S4xgsb4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:57:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized: Only admin users can access this route\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkxMzE5LCJleHAiOjE2OTE2OTIyMTl9.aPcHY1eQFhQxhQqrlGFr7zogo_CSdZqMDn6kzj1lNfY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"VeraL\",\r\n  \"password\": \"secure\",\r\n  \"first_name\": \"Vera\",\r\n  \"last_name\": \"Lime\",\r\n  \"department_id\": 102,\r\n  \"position\": \"Manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "409 conflict",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"LizaR\",\r\n  \"password\": \"secure\",\r\n  \"first_name\": \"Liza\",\r\n  \"last_name\": \"Red\",\r\n  \"department_id\": 101,\r\n  \"position\": \"Secretary\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-oTv+u2JoKeknn2ZiiPtBz7YXOcg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:17:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This LizaR is already in use\"\n}"
+				},
+				{
+					"name": "201 create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"VeraL\",\r\n  \"password\": \"secure\",\r\n  \"first_name\": \"Vera\",\r\n  \"last_name\": \"Lime\",\r\n  \"department_id\": 102,\r\n  \"position\": \"Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8-v0WR02X6LTiYi/5IvepyWXxki5M\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:19:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 6\n}"
+				},
+				{
+					"name": "403 not admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"ArtemV\",\r\n  \"password\": \"secure\",\r\n  \"first_name\": \"Artem\",\r\n  \"last_name\": \"Violet\",\r\n  \"department_id\": 102,\r\n  \"position\": \"Manager\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-fS/zQyWnyflNOAGFzMk3S4xgsb4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:55:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized: Only admin users can access this route\"\n}"
+				}
+			]
+		},
+		{
+			"name": "udpate user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkyNDAzLCJleHAiOjE2OTE2OTMzMDN9.Br41CpN5p8UPvThzVM_9hgFWSjn9VvrPMtNqROY4iiE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"role\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404 user not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"secure123\",\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Blue\",\r\n  \"role\":\"admin\",\r\n  \"position\": \"Software Engineer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-E5nZNSEA2bxpgCWUG57Qyu3DB/c\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:21:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User with id 2 not found\"\n}"
+				},
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-dfFyQgR3GE+Pkj6o/3TrBgkhH1g\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:34:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User updated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkyNDAzLCJleHAiOjE2OTE2OTMzMDN9.Br41CpN5p8UPvThzVM_9hgFWSjn9VvrPMtNqROY4iiE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-27o4zzUjhHNmthTJyia4gBCjpos\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:34:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User deleted successfully\"\n}"
+				},
+				{
+					"name": "404 not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-E5nZNSEA2bxpgCWUG57Qyu3DB/c\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:35:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User with id 2 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"login\":\"VeraL\",\r\n  \"password\": \"secure\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"login\":\"NatalyB\",\r\n  \"password\": \"secure123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-fwY7IyDNbwQ/R2WRxUNq4PC9+Cs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:35:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login or password are wrong\"\n}"
+				},
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"login\":\"VeraL\",\r\n  \"password\": \"secure\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "319"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13f-sB/EMHlfZZxphqvZUkqC9LTVJbM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:38:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 6,\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjkxNjkyNjk0LCJleHAiOjE2OTE2OTM1OTR9.KMG1xpGd7yQHyGF6eFOyhMTeht-tNfljwJ-ARXj8tbQ\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjkxNjkyNjk0LCJleHAiOjE2OTE3NzkwOTR9.9-ff5dxipxAwduSww5M_iHt5KGzvUu3BqKTS3bdO1QY\"\n}"
+				}
+			]
+		},
+		{
+			"name": "logout user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjkxNjkzMDAyLCJleHAiOjE2OTE2OTM5MDJ9.UaJhMFnzF2UxUd3gAm2tkFgs4bu-Jq_Vn7b8QyNgB9k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-UvmsRjBpPZgC9fY2f6NltgPcXRs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:38:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logout success\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-CgdsrqtkLn0qBSLU/p4pPCfLVik\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:39:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"jwt malformed\"\n}"
+				},
+				{
+					"name": "401 not autorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-hptDGgvEsj4G9BowIxRncOGOQj0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:40:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjcwMjI3LCJleHAiOjE2OTE3NTY2Mjd9.OKBRUCz4psVfWthatM0i1bsZFqzOj79nU77X4hEjxMo\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"refresh"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkxMzE5LCJleHAiOjE2OTE3Nzc3MTl9.P592amsYap8HTjUkWNGAvfONb_ivpeSMNizIAiBtXRI\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "312"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"138-mda53x5+upzr2KTtOJCECIh1+Qs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:33:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkyNDAzLCJleHAiOjE2OTE2OTMzMDN9.Br41CpN5p8UPvThzVM_9hgFWSjn9VvrPMtNqROY4iiE\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjkyNDAzLCJleHAiOjE2OTE3Nzg4MDN9.FlIgDEBdgpFjHJjvTNBxI7SU5BpxzN21oreYD2yGd1Y\"\n}"
+				}
+			]
+		},
+		{
+			"name": "all topics",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjkxNjcyNDQwLCJleHAiOjE2OTE2NzMzNDB9.VIiZzjPFj9aT_Zw41MUdw-__oRDkyyCATwvYt_H4r4s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/topics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"topics"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/topics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2945"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b81-CcIgl99AJDxJLQxCdogb34SfLUs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 19:01:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 11,\n        \"title\": \"Welcome!\",\n        \"text\": \"Hello and welcome to a new workday! Embrace the opportunities that lie ahead and make the most of your time. Let's dive into the world of Node.js and explore its fascinating features.\",\n        \"created_at\": \"2023-08-10T18:45:52.000Z\",\n        \"description\": \"Hello and welcome to a new workday!\",\n        \"user_id\": 6\n    },\n    {\n        \"id\": 10,\n        \"title\": \"Welcome two!\",\n        \"text\": \"Witness the breathtaking beauty of a golden sunrise, bringing warmth and tranquility to the start of a new day.\",\n        \"created_at\": \"2023-08-10T12:54:39.000Z\",\n        \"description\": \"Hello and welcome!\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 9,\n        \"title\": \"Welcome!\",\n        \"text\": \"Hello and welcome to a new workday! Embrace the opportunities that lie ahead and make the most of your time. Let's dive into the world of Node.js and explore its fascinating features.\",\n        \"created_at\": \"2023-08-10T12:52:01.000Z\",\n        \"description\": \"Hello and welcome to a new workday!\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 8,\n        \"title\": \"Active Lifestyle: Embracing Fitness and Sports\",\n        \"text\": \"Get your heart pumping and stay healthy by engaging in various sports and fitness activities. From jogging to yoga, there's a world of possibilities waiting for you!\",\n        \"created_at\": \"2023-08-10T11:00:43.000Z\",\n        \"description\": \"Discover the benefits of an active lifestyle.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 7,\n        \"title\": \"Bike Trails and Beyond: Exploring Nature by Bicycle\",\n        \"text\": \"Escape the hustle and bustle of the city and immerse yourself in nature's beauty with leisurely bike rides along picturesque trails. Experience the tranquility of the outdoors.\",\n        \"created_at\": \"2023-07-10T10:58:48.000Z\",\n        \"description\": \"Connect with nature through cycling.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Sporting Excellence: Celebrating Achievements in Athletics\",\n        \"text\": \"Join us in applauding the remarkable achievements of local athletes who have showcased exceptional dedication and prowess in their respective sports.\",\n        \"created_at\": \"2023-06-10T10:56:47.000Z\",\n        \"description\": \"Highlighting the success of our local sports stars.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Sunrise Serenity: Embracing the Beauty of a Sunny Morning\",\n        \"text\": \"Witness the breathtaking beauty of a golden sunrise, bringing warmth and tranquility to the start of a new day.\",\n        \"created_at\": \"2022-08-10T09:42:29.000Z\",\n        \"description\": \"Embrace the serenity of a sun-kissed morning.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Weekend Vibes: Wishing You an Amazing Weekend Ahead\",\n        \"text\": \"As the weekend approaches, we send you warm wishes for a relaxing and enjoyable time ahead. Make the most of your well-deserved break\",\n        \"created_at\": \"2022-08-10T09:42:17.000Z\",\n        \"description\": \"Get ready for a fantastic weekend!\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Healthy and Happy: The Joy of Outdoor Workouts\",\n        \"text\": \"Experience the invigorating joy of outdoor workouts, whether it's a game of tennis, a jog in the park, or a group fitness class. Stay active and enjoy the fresh air!\",\n        \"created_at\": \"2022-06-10T10:56:17.000Z\",\n        \"description\": \"Elevate your mood with outdoor exercise\",\n        \"user_id\": 1\n    }\n]"
+				},
+				{
+					"name": "200 ok sort&filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/topics?sortBy=created_at&sortOrder=desc&fromDate=2022-01-01&toDate=2022-08-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "created_at"
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc"
+								},
+								{
+									"key": "fromDate",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2022-08-31"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "979"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d3-3O/oCCONCE0M6r6XBpcvx9U3SdU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 19:02:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"title\": \"Sunrise Serenity: Embracing the Beauty of a Sunny Morning\",\n        \"text\": \"Witness the breathtaking beauty of a golden sunrise, bringing warmth and tranquility to the start of a new day.\",\n        \"created_at\": \"2022-08-10T09:42:29.000Z\",\n        \"description\": \"Embrace the serenity of a sun-kissed morning.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Weekend Vibes: Wishing You an Amazing Weekend Ahead\",\n        \"text\": \"As the weekend approaches, we send you warm wishes for a relaxing and enjoyable time ahead. Make the most of your well-deserved break\",\n        \"created_at\": \"2022-08-10T09:42:17.000Z\",\n        \"description\": \"Get ready for a fantastic weekend!\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Healthy and Happy: The Joy of Outdoor Workouts\",\n        \"text\": \"Experience the invigorating joy of outdoor workouts, whether it's a game of tennis, a jog in the park, or a group fitness class. Stay active and enjoy the fresh air!\",\n        \"created_at\": \"2022-06-10T10:56:17.000Z\",\n        \"description\": \"Elevate your mood with outdoor exercise\",\n        \"user_id\": 1\n    }\n]"
+				},
+				{
+					"name": "200 ok sort asc",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/topics?sortBy=created_at&sortOrder=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "created_at"
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2945"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b81-rmZHhCGGEvkD1dBee/iCyk1+g7s\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 19:03:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"title\": \"Healthy and Happy: The Joy of Outdoor Workouts\",\n        \"text\": \"Experience the invigorating joy of outdoor workouts, whether it's a game of tennis, a jog in the park, or a group fitness class. Stay active and enjoy the fresh air!\",\n        \"created_at\": \"2022-06-10T10:56:17.000Z\",\n        \"description\": \"Elevate your mood with outdoor exercise\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Weekend Vibes: Wishing You an Amazing Weekend Ahead\",\n        \"text\": \"As the weekend approaches, we send you warm wishes for a relaxing and enjoyable time ahead. Make the most of your well-deserved break\",\n        \"created_at\": \"2022-08-10T09:42:17.000Z\",\n        \"description\": \"Get ready for a fantastic weekend!\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Sunrise Serenity: Embracing the Beauty of a Sunny Morning\",\n        \"text\": \"Witness the breathtaking beauty of a golden sunrise, bringing warmth and tranquility to the start of a new day.\",\n        \"created_at\": \"2022-08-10T09:42:29.000Z\",\n        \"description\": \"Embrace the serenity of a sun-kissed morning.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Sporting Excellence: Celebrating Achievements in Athletics\",\n        \"text\": \"Join us in applauding the remarkable achievements of local athletes who have showcased exceptional dedication and prowess in their respective sports.\",\n        \"created_at\": \"2023-06-10T10:56:47.000Z\",\n        \"description\": \"Highlighting the success of our local sports stars.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 7,\n        \"title\": \"Bike Trails and Beyond: Exploring Nature by Bicycle\",\n        \"text\": \"Escape the hustle and bustle of the city and immerse yourself in nature's beauty with leisurely bike rides along picturesque trails. Experience the tranquility of the outdoors.\",\n        \"created_at\": \"2023-07-10T10:58:48.000Z\",\n        \"description\": \"Connect with nature through cycling.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 8,\n        \"title\": \"Active Lifestyle: Embracing Fitness and Sports\",\n        \"text\": \"Get your heart pumping and stay healthy by engaging in various sports and fitness activities. From jogging to yoga, there's a world of possibilities waiting for you!\",\n        \"created_at\": \"2023-08-10T11:00:43.000Z\",\n        \"description\": \"Discover the benefits of an active lifestyle.\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 9,\n        \"title\": \"Welcome!\",\n        \"text\": \"Hello and welcome to a new workday! Embrace the opportunities that lie ahead and make the most of your time. Let's dive into the world of Node.js and explore its fascinating features.\",\n        \"created_at\": \"2023-08-10T12:52:01.000Z\",\n        \"description\": \"Hello and welcome to a new workday!\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 10,\n        \"title\": \"Welcome two!\",\n        \"text\": \"Witness the breathtaking beauty of a golden sunrise, bringing warmth and tranquility to the start of a new day.\",\n        \"created_at\": \"2023-08-10T12:54:39.000Z\",\n        \"description\": \"Hello and welcome!\",\n        \"user_id\": 1\n    },\n    {\n        \"id\": 11,\n        \"title\": \"Welcome!\",\n        \"text\": \"Hello and welcome to a new workday! Embrace the opportunities that lie ahead and make the most of your time. Let's dive into the world of Node.js and explore its fascinating features.\",\n        \"created_at\": \"2023-08-10T18:45:52.000Z\",\n        \"description\": \"Hello and welcome to a new workday!\",\n        \"user_id\": 6\n    }\n]"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/topics?sortBy=created_at",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "created_at"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-09bVwDfYJ6JDEMXT8K3btOKVMDQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 19:03:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"There must be two parameters (sortBy and sortOrder) for correct sorting\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create new topic",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjcxOTA3LCJleHAiOjE2OTE2NzI4MDd9.n53VLnWCujE2ECZfXhqU4z7OU_aV9pxhsfyAnlmeezs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"Welcome!\",\r\n\"text\": \"Hello and welcome to a new workday! Embrace the opportunities that lie ahead and make the most of your time. Let's dive into the world of Node.js and explore its fascinating features.\",\r\n\"description\":\"Hello and welcome to a new workday!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/topics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"topics"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\": \"Welcome!\",\r\n\"text\": \"Hello and welcome to a new workday! Embrace the opportunities that lie ahead and make the most of your time. Let's dive into the world of Node.js and explore its fascinating features.\",\r\n\"description\":\"Hello and welcome to a new workday!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/topics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "9"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9-hVv0cNJophUD7CGn+ZqXp8tVGo0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:45:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11\n}"
+				},
+				{
+					"name": "403 not admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\": \"Welcome!\",\r\n\"text\": \"Hello and welcome to a new workday! Embrace the opportunities that lie ahead and make the most of your time. Let's dive into the world of Node.js and explore its fascinating features.\",\r\n\"description\":\"Hello and welcome to a new workday!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/topics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-fS/zQyWnyflNOAGFzMk3S4xgsb4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:58:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized: Only admin users can access this route\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update topic",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjcxOTA3LCJleHAiOjE2OTE2NzI4MDd9.n53VLnWCujE2ECZfXhqU4z7OU_aV9pxhsfyAnlmeezs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"Welcome two!\",\r\n\"text\": \"Hello and welcome to a new week! Embrace the opportunities that lie ahead and make the most of your time. Let's dive into the world of Node.js and explore its fascinating features.\",\r\n\"description\":\"Hello and welcome!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/topics/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"topics",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\": \"Welcome two!\",\r\n\"text\": \"Witness the breathtaking beauty of a golden sunrise, bringing warmth and tranquility to the start of a new day.\",\r\n\"description\":\"Hello and welcome!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/topics/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics",
+								"10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-XVOVqd49JpBHlRPYllaIc/EoN9E\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 19:00:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Topic updated successfully\"\n}"
+				},
+				{
+					"name": "404 not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\": \"Welcome two!\",\r\n\"text\": \"Witness the breathtaking beauty of a golden sunrise, bringing warmth and tranquility to the start of a new day.\",\r\n\"description\":\"Hello and welcome!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/topics/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-V/uqqiU2Unw5L0Ilb9Hg9lpAahU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 19:00:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Topic with id 1 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete topic",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkxNjcxOTA3LCJleHAiOjE2OTE2NzI4MDd9.n53VLnWCujE2ECZfXhqU4z7OU_aV9pxhsfyAnlmeezs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/topics/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"topics",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404 not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/topics/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-V/uqqiU2Unw5L0Ilb9Hg9lpAahU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 19:01:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Topic with id 1 not found\"\n}"
+				},
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/topics/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"topics",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-4sYgPPjy6FdvkcTPnyuo6We/s2k\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 19:01:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Topic deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
